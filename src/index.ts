@@ -1,36 +1,7 @@
 import finder from '@medv/finder';
 
 import { ScrollTweenInstance, ScrollTweenRawInstance } from './classes';
-
-// -----------------------------------------------------------
-// TYPES
-// -----------------------------------------------------------
-export type TweenableProperties = Partial<{
-	translate: number;
-	translateX: number;
-	translateY: number;
-	translateZ: number;
-	scale: number;
-	scaleX: number;
-	scaleY: number;
-	scaleZ: number;
-	rotate: number;
-	rotateX: number;
-	rotateY: number;
-	rotateZ: number;
-	opacity: number;
-	color: string;
-	backgroundColor: string;
-	fontSize: number;
-}>;
-
-export type ScrollTweenAction = {
-	selector: string;
-	trigger?: string;
-	duration?: number;
-	delay?: number;
-	props?: TweenableProperties;
-};
+import { ScrollTweenAction, TweenableProperties } from './types';
 
 const defineScrollTweenActions = (actions: Array<ScrollTweenAction>) => {
 	return new ScrollTweenInstance(actions);
@@ -85,7 +56,7 @@ const getRawTweenValues = (action: Partial<ScrollTweenAction>, callback: (value:
 	return scrollTweenRawInstance;
 };
 
-export default {
+const ScrollTween = {
 	define: defineScrollTweenActions,
 	parallel: getActionsForParallelTweening,
 	staggered: getActionsForStaggeredTweening,
@@ -93,3 +64,5 @@ export default {
 	fromChildren: getActionsForChildrenOfElement,
 	raw: getRawTweenValues,
 };
+
+export default ScrollTween;

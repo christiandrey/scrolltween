@@ -1,14 +1,10 @@
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
-import typescript from '@rollup/plugin-typescript';
-import { uglify } from 'rollup-plugin-uglify';
+import typescript from '@wessberg/rollup-plugin-ts';
+import { terser } from 'rollup-plugin-terser';
 
 export default {
 	input: `src/index.ts`,
-	output: {
-		dir: projectName,
-		format: "cjs",
-	},
 	output: [
 		{
 			file: "dist/index.umd.js",
@@ -28,5 +24,5 @@ export default {
 			format: "es",
 		},
 	],
-	plugins: [typescript(), resolve(), commonjs(), uglify()],
+	plugins: [typescript(), resolve(), commonjs(), terser({ output: { comments: false } })],
 };

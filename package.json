@@ -12,7 +12,7 @@
 	],
 	"main": "dist/index.cjs.js",
 	"module": "dist/index.esm.js",
-	"types": "dist/index.d.ts",
+	"types": "dist/types/index.esm.d.ts",
 	"repository": "https://github.com/christiandrey/scrolltween.git",
 	"author": "christiandrey <oluwaseun.adedire@gmail.com>",
 	"license": "MIT",
@@ -29,10 +29,10 @@
 	"devDependencies": {
 		"@rollup/plugin-commonjs": "^11.0.1",
 		"@rollup/plugin-node-resolve": "^7.0.0",
-		"@rollup/plugin-typescript": "^2.1.0",
 		"@types/node": "^13.1.7",
+		"@wessberg/rollup-plugin-ts": "^1.2.13",
 		"rollup": "^1.29.0",
-		"rollup-plugin-uglify": "^6.0.4",
+		"rollup-plugin-terser": "^5.2.0",
 		"tslib": "^1.10.0",
 		"typescript": "^3.7.5"
 	}

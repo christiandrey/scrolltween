@@ -1,10 +1,9 @@
 import memoize from 'fast-memoize';
 import interpolate from 'polate-js';
-import * as Rematrix from 'rematrix';
+import Rematrix from 'rematrix';
 
+import { ScrollTweenAction } from './types';
 import { getElementOffset, getViewportHeight, normalizeColor, normalizeFontSize } from './utils';
-
-import type { ScrollTweenAction } from '.';
 
 class ScrollTweenInstance {
 	private _scrollPosition: number;
@@ -270,7 +269,4 @@ class ScrollTweenRawInstance {
 	}
 }
 
-export {
-   ScrollTweenInstance,
-   ScrollTweenRawInstance
-}
+export { ScrollTweenInstance, ScrollTweenRawInstance };

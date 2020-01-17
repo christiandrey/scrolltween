@@ -20,4 +20,4 @@ yarn add scrolltween
 
 ## License
 
-MIT © Oluwaseun Adedire
+MIT © christiandrey

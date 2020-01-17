@@ -49,7 +49,7 @@ ScrollTween ships with Typescript definitions for write-time type checking.
 
 ## Live demo
 
-Please see live demo at [Codepen](www.codepen.io).
+Please see live demo at [CodeSandbox](https://codesandbox.io/s/nostalgic-greider-14ymb).
 
 ## Quickstart
 
@@ -133,54 +133,60 @@ ScrollTween provides the following top-level methods:
 ### define
 
 `ScrollTween.define(actions)` allows initial configuration of tweening actions. It returns a `ScrollTweenInstance`.
-| Parameter | Type | Description |
-| ------------- |-------------| -----|
-| actions | `Array<ScrollTweenAction>` | A list of actions representing DOM elements to be tweened and their respective tweening configurations. |
+
+| Parameter | Type                       | Description                                                                                             |
+| --------- | -------------------------- | ------------------------------------------------------------------------------------------------------- |
+| actions   | `Array<ScrollTweenAction>` | A list of actions representing DOM elements to be tweened and their respective tweening configurations. |
 
 ### sequence
 
 `ScrollTween.sequence(trigger, actions, delay?)` allows definition of tweening actions that are to be executed sequentially. It returns an array of `ScrollTweenAction`.
-| Parameter | Type | Description |
-| ------------- |-------------| -----|
-| trigger | `string` | Selector for the DOM element to watch to know when to start sequential tweening. |
-| actions | `Array<ScrollTweenAction>` | A list of actions representing DOM elements to be tweened and their respective tweening configurations. |
-| delay? | `number` | An optional length of scroll time that should be added before tweening starts. It's defined in `vh`. |
+
+| Parameter | Type                       | Description                                                                                             |
+| --------- | -------------------------- | ------------------------------------------------------------------------------------------------------- |
+| trigger   | `string`                   | Selector for the DOM element to watch to know when to start sequential tweening.                        |
+| actions   | `Array<ScrollTweenAction>` | A list of actions representing DOM elements to be tweened and their respective tweening configurations. |
+| delay?    | `number`                   | An optional length of scroll time that should be added before tweening starts. It's defined in `vh`.    |
 
 ### parallel
 
 `ScrollTween.parallel(trigger, actions, delay?)` allows definition of tweening actions that are to be executed in parallel. It returns an array of `ScrollTweenAction`.
-| Parameter | Type | Description |
-| ------------- |-------------| -----|
-| trigger | `string` | Selector for the DOM element to watch to know when to start sequential tweening. |
-| actions | `Array<ScrollTweenAction>` | A list of actions representing DOM elements to be tweened and their respective tweening configurations. |
-| delay? | `number` | An optional length of scroll time that should be added before tweening starts. It's defined in `vh`. |
+
+| Parameter | Type                       | Description                                                                                             |
+| --------- | -------------------------- | ------------------------------------------------------------------------------------------------------- |
+| trigger   | `string`                   | Selector for the DOM element to watch to know when to start sequential tweening.                        |
+| actions   | `Array<ScrollTweenAction>` | A list of actions representing DOM elements to be tweened and their respective tweening configurations. |
+| delay?    | `number`                   | An optional length of scroll time that should be added before tweening starts. It's defined in `vh`.    |
 
 ### staggered
 
 `ScrollTween.staggered(trigger, stagger, actions, delay?)` allows definition of tweening actions that are to be executed in parallel, but with successive delays. It returns an array of `ScrollTweenAction`.
-| Parameter | Type | Description |
-| ------------- |-------------| -----|
-| trigger | `string` | Selector for the DOM element to watch to know when to start sequential tweening. |
-| stagger | `number` | The delay between each action. |
-| actions | `Array<ScrollTweenAction>` | A list of actions representing DOM elements to be tweened and their respective tweening configurations. |
-| delay? | `number` | An optional length of scroll time that should be added before tweening starts. It's defined in `vh`. |
+
+| Parameter | Type                       | Description                                                                                             |
+| --------- | -------------------------- | ------------------------------------------------------------------------------------------------------- |
+| trigger   | `string`                   | Selector for the DOM element to watch to know when to start sequential tweening.                        |
+| stagger   | `number`                   | The delay between each action.                                                                          |
+| actions   | `Array<ScrollTweenAction>` | A list of actions representing DOM elements to be tweened and their respective tweening configurations. |
+| delay?    | `number`                   | An optional length of scroll time that should be added before tweening starts. It's defined in `vh`.    |
 
 ### fromChildren
 
 `ScrollTween.fromChildren(parent, duration, props)` is a utility function that generates a list of `ScrollTweenAction` from the direct children of a DOM element. It returns an array of `ScrollTweenAction`.
-| Parameter | Type | Description |
-| ------------- |-------------| -----|
-| parent | `string` | Selector for the parent DOM element. |
-| duration | `number` | Duration to be applied to each action |
-| props | `TweenableProperties | Array<TweenableProperties>` | An object or an Array containing properties to be tweened. When an array of `TweenableProperties` is provided, the index of the child DOM element is used to get its `TweenableProperties` from the array. |
+
+| Parameter | Type                                               | Description                                                                                                                                                                                                |
+| --------- | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| parent    | `string`                                           | Selector for the parent DOM element.                                                                                                                                                                       |
+| duration  | `number`                                           | Duration to be applied to each action                                                                                                                                                                      |
+| props     | `TweenableProperties | Array<TweenableProperties>` | An object or an Array containing properties to be tweened. When an array of `TweenableProperties` is provided, the index of the child DOM element is used to get its `TweenableProperties` from the array. |
 
 ### raw
 
 `ScrollTween.raw(action, callback)` calls a callback with a value between 0 and 1, representing the tween state. This will typically be used for tweening instances not covered by ScrollTween. It's optimized and only calls the callback with a new value only if the value has changed. It returns a `ScrollTweenInstance` that is auto-started and can also be refreshed and destroyed.
-| Parameter | Type | Description |
-| ------------- |-------------| -----|
-| action | `Partial<ScrollTweenAction>` | Defines `trigger`, `duration` and optionally `delay`. |
-| callback | `(value: number) => void` | A function to be called with the tween value (between 0 and 1) whenever it changes. |
+
+| Parameter | Type                         | Description                                                                         |
+| --------- | ---------------------------- | ----------------------------------------------------------------------------------- |
+| action    | `Partial<ScrollTweenAction>` | Defines `trigger`, `duration` and optionally `delay`.                               |
+| callback  | `(value: number) => void`    | A function to be called with the tween value (between 0 and 1) whenever it changes. |
 
 ## License
 

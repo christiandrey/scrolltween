@@ -15,7 +15,7 @@ const getActionsForStaggeredTweening = (trigger: string, stagger: number, action
 	return actions.map((o, i) => ({
 		...o,
 		trigger,
-		delay: i * stagger,
+		delay: i * stagger + delay,
 	}));
 };
 
@@ -56,13 +56,20 @@ const getRawTweenValues = (action: Partial<ScrollTweenAction>, callback: (value:
 	return scrollTweenRawInstance;
 };
 
+export const define = defineScrollTweenActions;
+export const parallel = getActionsForParallelTweening;
+export const staggered = getActionsForStaggeredTweening;
+export const sequence = getActionsForSequenceTweening;
+export const fromChildren = getActionsForChildrenOfElement;
+export const raw = getRawTweenValues;
+
 const ScrollTween = {
-	define: defineScrollTweenActions,
-	parallel: getActionsForParallelTweening,
-	staggered: getActionsForStaggeredTweening,
-	sequence: getActionsForSequenceTweening,
-	fromChildren: getActionsForChildrenOfElement,
-	raw: getRawTweenValues,
+	define,
+	parallel,
+	staggered,
+	sequence,
+	fromChildren,
+	raw,
 };
 
 export default ScrollTween;

@@ -3,8 +3,6 @@
 		"target": "es5",
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"removeComments": true,
-		"declaration": true,
-		"declarationDir": "dist/types",
 		"outDir": "./dist",
 		"downlevelIteration": true
 	},

@@ -1,7 +1,7 @@
 {
 	"name": "scrolltween",
 	"description": "Yet another tweening helper for the browser.",
-	"version": "0.0.5-beta",
+	"version": "0.0.6-beta",
 	"keywords": [
 		"interpolate",
 		"interpolation",
@@ -12,7 +12,7 @@
 	],
 	"main": "dist/index.cjs.js",
 	"module": "dist/index.esm.js",
-	"types": "dist/types/index.esm.d.ts",
+	"types": "dist/index.d.ts",
 	"repository": "https://github.com/christiandrey/scrolltween.git",
 	"author": "christiandrey <oluwaseun.adedire@gmail.com>",
 	"license": "MIT",

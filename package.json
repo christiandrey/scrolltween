@@ -1,0 +1,38 @@
+{
+	"name": "scrolltween",
+	"description": "Yet another tweening helper for the browser.",
+	"version": "0.0.5-beta",
+	"keywords": [
+		"interpolate",
+		"interpolation",
+		"color",
+		"tween",
+		"tweening",
+		"scroll"
+	],
+	"main": "dist/index.cjs.js",
+	"module": "dist/index.esm.js",
+	"types": "dist/index.d.ts",
+	"repository": "https://github.com/christiandrey/scrolltween.git",
+	"author": "christiandrey <oluwaseun.adedire@gmail.com>",
+	"license": "MIT",
+	"private": false,
+	"scripts": {
+		"build": "rollup --config"
+	},
+	"dependencies": {
+		"@medv/finder": "^1.1.2",
+		"fast-memoize": "^2.5.1",
+		"polate-js": "^1.0.5",
+		"rematrix": "^0.4.1"
+	},
+	"devDependencies": {
+		"@rollup/plugin-commonjs": "^11.0.1",
+		"@rollup/plugin-node-resolve": "^7.0.0",
+		"@rollup/plugin-typescript": "^2.1.0",
+		"@types/node": "^13.1.7",
+		"rollup": "^1.29.0",
+		"tslib": "^1.10.0",
+		"typescript": "^3.7.5"
+	}
+}

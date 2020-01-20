@@ -1,7 +1,7 @@
 {
 	"name": "scrolltween",
 	"description": "Yet another tweening helper for the browser.",
-	"version": "0.0.7-beta",
+	"version": "0.0.8-beta",
 	"keywords": [
 		"interpolate",
 		"interpolation",
